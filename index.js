@@ -1,7 +1,7 @@
 'use strict';
 
 const apprun = require('apprun').app;
-require('./add');
+require('./server/add');
 
 const express = require('express');
 const path = require('path');
