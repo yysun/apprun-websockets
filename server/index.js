@@ -1,7 +1,7 @@
 'use strict';
 
 const apprun = require('apprun').app;
-require('./server/add');
+require('./add');
 
 const express = require('express');
 const path = require('path');
@@ -10,7 +10,7 @@ const { createServer } = require('http');
 const WebSocket = require('ws');
 
 const app = express();
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(express.static(path.join(__dirname, '../public')));
 
 const server = createServer(app);
 const wss = new WebSocket.Server({ server });
@@ -33,6 +33,8 @@ wss.on('connection', function(ws) {
   console.log('started ws connection');
 });
 
-server.listen(8080, function() {
-  console.log('Listening on http://localhost:8080');
+//const port = process.env.PORT || 8080;
+const port = 8080;
+server.listen(port, function() {
+  console.log(`Your app is listening on port ${listener.address().port}`);
 });
