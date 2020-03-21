@@ -1,4 +1,4 @@
-import app, {Component} from 'apprun';
+import { app, Component } from 'apprun';
 
 export default class AboutComponent extends Component {
   state = 'About';
@@ -9,8 +9,5 @@ export default class AboutComponent extends Component {
     </div>
   }
 
-  update = {
-    '#About': state => state,
-  }
 }
 

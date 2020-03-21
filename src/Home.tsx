@@ -1,9 +1,9 @@
-import app, {Component} from 'apprun';
+import { app, Component, on} from 'apprun';
 
 export default class HomeComponent extends Component {
   state = 0;
 
-  view = (state) => {
+  view = state => {
     return <div>
       <div>Run the counter on server through web sockets</div>
       <h1>{state}</h1>
@@ -14,9 +14,8 @@ export default class HomeComponent extends Component {
     </div>
   }
 
-  update = {
-    '#,#Home': state => state,
-    '@add': (_, state) => state
-  }
+
+  @on('@add') add = (_, state) => state
+
 }
 

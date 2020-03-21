@@ -13,7 +13,8 @@ app.on('//', route => {
 export default () => <div class="container">
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">AppRun - Web Sockets</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
       aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -21,7 +22,7 @@ export default () => <div class="container">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="nav-link" href="#Home">Home
-          <span class="sr-only">(current)</span>
+            <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
@@ -37,6 +38,6 @@ export default () => <div class="container">
 </div>;
 
 const element = 'my-app';
-new Home().mount(element);
-new About().mount(element);
-new Contact().mount(element);
+new Home().mount(element, { route: '#, #Home'});
+new About().mount(element, { route: '#About'});
+new Contact().mount(element, { route: '#Contact'});

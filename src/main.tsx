@@ -1,5 +1,4 @@
 import app from 'apprun';
-
 import Layout from './layout';
 
 const ws = new WebSocket(`ws://${location.host}`);
